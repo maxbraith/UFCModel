@@ -29,6 +29,16 @@ def scrapeFighterStats():
             href = link['href']
             if href:
                 fighterLinks.append(href)
+
+        #remove link dups
+        fighterLinks = list(set(fighterLinks))
+
+        #scrape stats from link
+        for i in fighterLinks:
+            site = requests.get(i, headers=headers)
+            
+
+
         
         
 
