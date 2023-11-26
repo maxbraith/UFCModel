@@ -29,30 +29,6 @@ def scrapeHistory():
 
 
     eventDates = list(dict.fromkeys(eventDates))
-    eventDates.pop(0)
-
-
-    #scraping event names
-    eventNames = []
-    event_names = soup.find_all('a', class_=re.compile("b-link b-link_style_black"))
-
-    #clean event names
-    for i in range(len(event_names)):
-        for j in event_names[i]:
-            eventNames.append(j.text.strip())
-
-    eventNames = list(dict.fromkeys(eventNames))
-
-    #scrape locations
-    eventLocations = []
-    event_locations = soup.find_all('td', class_=re.compile("b-statistics__table-col b-statistics__table-col_style_big-top-padding"))
-
-    #clean locations
-    for i in range(len(event_locations)):
-        for j in event_locations[i]:
-            eventLocations.append(j.text.strip())
-
-    eventLocations = list(dict.fromkeys(eventLocations))
 
 
 
