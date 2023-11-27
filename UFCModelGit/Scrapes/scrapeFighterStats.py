@@ -5,8 +5,6 @@ import pandas as pd
 import numpy
 import math
 import csv
-import unidecode
-from unidecode import unidecode
 from csv import writer
 import itertools
 
