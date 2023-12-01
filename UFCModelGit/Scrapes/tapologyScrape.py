@@ -146,7 +146,7 @@ print(f'Event Links Found: {len(cleanParts)}')
 fightLinksParts = []
 count =1
 for i in cleanParts:
-    if(count%15==0):
+    if(count%16==0):
         time.sleep(180)
     fightParts = []
     #create url
@@ -174,12 +174,11 @@ print(fightLinksParts)
 print(f'Fights found: {len(fightLinksParts)}')  
 
 
-import time
 #scrape individual fight statistics
 count = 1
 fightStats = []
 for i in fightLinksParts:
-    if(count%20==0):
+    if(count%16==0):
         time.sleep(180)
     proxyheader = getProxyHeader()
     proxy = proxyheader[0]
