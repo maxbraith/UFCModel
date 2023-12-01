@@ -7,6 +7,7 @@ import math
 import csv
 from csv import writer
 import itertools
+import time
 
 #generate proxyList
 proxylist =[]
@@ -16,24 +17,31 @@ with open('working_proxies.csv', 'r') as f:
         proxylist.append(row[0])
 print(f'Proxies: {len(proxylist)}')
 
+
 #get working Proxy
+import random
+
+
 def getProxyHeader():
     for i in proxylist:
-        headers = {'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188','insomnia/8.4.5'}
-        for header in headers:
-            try:
-
-                url = "https://www.tapology.com/fightcenter/bouts/2974-ufc-64-clay-the-carpenter-guida-vs-justin-pretty-boy-james"
-            
-                #site request
-                response = requests.request("GET", url, data=payload, headers=header, proxies={'http': f"http://{i}"})
-                soup = BeautifulSoup(response.content, 'html.parser')
-                boutInfo = soup.find('div', class_=re.compile('right'))
-                labels = boutInfo.find_all('li')
-                proxyheader = f'{i}#-*{header}'
-                return proxyheader
-            except:
-                pass
+        userAgents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188','insomnia/8.4.5']
+        userAgent = userAgents[random.randint(0,len(userAgents)-1)]
+        try:
+            payload = ''
+            headers = {'User-Agent':f'{userAgent}',
+            "cookie": "_tapology_mma_session=TCLB17ieOPnBLmCBTuxpX8s3uBODZMN3jL3jBbFhwPoywfbzG7gyvp%252BAzbOk4gOZ%252FOCykOUwcpEoJBwoj2rJyiMxdHWSaiLFkBYjfuUDpZ2VY6ECFn6rpTPmUBY1Zr2anIqiklY6fz9yQlBkPAhcx%252BWSzVgsc%252B%252F8UCqkb6WnM6xr8GUikb8U2UkMVYZ3Nj1dIA0vbXpDhKykqgW%252BCnlyglp8rtdlQ37m0SaYWjLDthG7Tik3idUvGlSXFAU55zAnxz6UNncMNhTbo5ltINfso54j60i7hOq0utNOz9w%253D--ChZexYwNpevIJ%252BV8--HhKStLELFfNWYOTZIAKM6Q%253D%253D"}
+            url = "https://www.tapology.com/fightcenter/bouts/2974-ufc-64-clay-the-carpenter-guida-vs-justin-pretty-boy-james"
+        
+            #site request
+            response = requests.request("GET", url, data=payload, headers=headers, proxies={'http': f"http://{i}"})
+            soup = BeautifulSoup(response.content, 'html.parser')
+            boutInfo = soup.find('div', class_=re.compile('right'))
+            labels = boutInfo.find_all('li')
+            proxyheader = [i,headers]
+            return proxyheader
+        except:
+            continue
+        
 
 #request API last page
 url = "https://www.tapology.com/fightcenter_events"
@@ -63,9 +71,16 @@ headers = {
 
 response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
 
-eventLinks =[]
+print(response.text)
+
+
+
+
+cleanParts =[]
 #loop through all API pages to get event links
-for i in range(1, 2):
+for i in range(1, 29):
+    if(i%17==0):
+        time.sleep(120)
     print(i)
     #request API page i
     url = "https://www.tapology.com/fightcenter_events"
@@ -116,7 +131,6 @@ for i in range(1, 2):
     parts = list(dict.fromkeys(parts))
                 
     #clean parts
-    cleanParts = []
     for part in parts:
         if 'region' not in part:
             cleanPart = part[2:-2]
@@ -125,9 +139,15 @@ for i in range(1, 2):
 print(cleanParts)
 print(f'Event Links Found: {len(cleanParts)}')
 
+
+
+        
 #scrape links of individual fights
 fightLinksParts = []
+count =1
 for i in cleanParts:
+    if(count%15==0):
+        time.sleep(60)
     fightParts = []
     #create url
     url = f"https://www.tapology.com{i}"
@@ -142,29 +162,29 @@ for i in cleanParts:
     for part in billings:
         fightParts.append(part.find_all('a'))    
 
-    
+    print(len(fightParts))
     #clean parts
     for part in fightParts:
         href = part[0]['href']
-        if href not in fightLinksParts:
+        if href:
             fightLinksParts.append(href)
+    print(len(fightLinksParts))
+    count+=1
 print(fightLinksParts)   
 print(f'Fights found: {len(fightLinksParts)}')  
 
+
+import time
 #scrape individual fight statistics
-count = 0
+count = 1
 fightStats = []
 for i in fightLinksParts:
-    proxyheader = str(getProxyHeader())
-    print(type(getProxyHeader))
-    proxyheader = proxyheader.split('#-*')
+    if(count%20==0):
+        time.sleep(60)
+    proxyheader = getProxyHeader()
     proxy = proxyheader[0]
     headers = proxyheader[1]
-    payload = ""
-    headers = {
-        "cookie": "_tapology_mma_session=HfNgv%252BYt6o0ry%252B2XW%252BVRIW5qJ8DE0V5qoP4VE%252Brlh9Yg%252FpCuHzcJNm3Qjjq2a6OLKVkXeVqVgM8AIpVSQBrudiFMjWMVB4zExXsZGiESVw1wkaQZAxkZvIuc3yCvjB%252F6Ihn3Jj53r%252BaqgMJGCAfg7WNI2MrSd7a6VBkGit92KRJBIUI%252Bed1uQZAQPCduZJKnIEy3zXfObTQSSKi%252FNt5%252Bmy9Qs9FSIbm4Gk%252BGYqEkm6fGmV4KC%252B%252B7arB2k5V5mckcJQIZAKnedIq%252FbC6NFdKGNfJhG9zyOviAZIQn5hk%253D--rACkAe%252FQfJrle6es--QS79zwaLAHuPqHc8%252BKbZnQ%253D%253D",
-        "User-Agent": "insomnia/8.4.5"
-    }
+
 
     url = f"https://www.tapology.com{i}"
         
@@ -177,15 +197,9 @@ for i in fightLinksParts:
         boutInfo = soup.find('div', class_=re.compile('right'))
         lilabels = boutInfo.find_all('li')
     except:
-        proxyheader = str(getProxyHeader())
-        proxyheader = proxyheader.split('#-*')
+        proxyheader = getProxyHeader()
         proxy = proxyheader[0]
         headers = proxyheader[1]
-        payload = ""
-        headers = {
-            "cookie": "_tapology_mma_session=HfNgv%252BYt6o0ry%252B2XW%252BVRIW5qJ8DE0V5qoP4VE%252Brlh9Yg%252FpCuHzcJNm3Qjjq2a6OLKVkXeVqVgM8AIpVSQBrudiFMjWMVB4zExXsZGiESVw1wkaQZAxkZvIuc3yCvjB%252F6Ihn3Jj53r%252BaqgMJGCAfg7WNI2MrSd7a6VBkGit92KRJBIUI%252Bed1uQZAQPCduZJKnIEy3zXfObTQSSKi%252FNt5%252Bmy9Qs9FSIbm4Gk%252BGYqEkm6fGmV4KC%252B%252B7arB2k5V5mckcJQIZAKnedIq%252FbC6NFdKGNfJhG9zyOviAZIQn5hk%253D--rACkAe%252FQfJrle6es--QS79zwaLAHuPqHc8%252BKbZnQ%253D%253D",
-            "User-Agent": "insomnia/8.4.5"
-        }
 
         url = f"https://www.tapology.com{i}"
             
@@ -214,8 +228,6 @@ for i in fightLinksParts:
     belt_status = None
     winner_nationality = None
     loser_nationality = None
-    winner_gym = None
-    loser_gym = None
     winner_fan = None
     loser_fan = None
     fight_name = None
@@ -321,14 +333,6 @@ for i in fightLinksParts:
                 loser_age = loserAgeList[0][:-6]
         except:
             pass
-        #scrape + clean gym
-        try:
-            if(tr.find('td', class_=re.compile('category') == 'Gym')):
-                tdLabels = tr.find_all('td')
-                winner_gym = tdLabels[0].text.strip()
-                loser_gym = tdLabels[len(tdLabels)-1].text.strip()
-        except:
-            pass
     #find + clean tapology fan predictions
     try:
         divs = soup.find_all('div', class_='number')
@@ -338,22 +342,12 @@ for i in fightLinksParts:
         pass
     print(f'Scraping {fight_name}...{f"{count/len(fightLinksParts):.0%}"}')
     count+=1
-    fightStats.append([fight_name,winner, loser, event,date,venue,title_fight,billing,winner_wins ,loser_wins ,winner_losses ,loser_losses ,winner_draws,loser_draws,winner_age ,loser_age ,belt_status ,winner_nationality ,loser_nationality ,winner_gym ,loser_gym ,winner_fan ,loser_fan])
+    fightStats.append([fight_name,winner, loser, event,date,venue,title_fight,billing,winner_wins ,loser_wins ,winner_losses ,loser_losses ,winner_draws,loser_draws,winner_age ,loser_age ,belt_status ,winner_nationality ,loser_nationality ,winner_fan ,loser_fan])
 
 
-
-head = ['fight','winner', 'loser', 'event','date','venue','title_fight','billing','winner_wins' ,'loser_wins' ,'winner_losses' ,'loser_losses' ,'winner_draws','loser_draws','winner_age' ,'loser_age' ,'belt_status' ,'winner_nationality' ,'loser_nationality' ,'winner_gym ','loser_gym' ,'winner_fan ','loser_fan']
+head = ['fight','winner', 'loser', 'event','date','venue','title_fight','billing','winner_wins' ,'loser_wins' ,'winner_losses' ,'loser_losses' ,'winner_draws','loser_draws','winner_age' ,'loser_age' ,'belt_status' ,'winner_nationality' ,'loser_nationality' ,'winner_fan ','loser_fan']
 
 with open('tapology_scrape.csv', 'w', encoding='UTF8', newline='') as tapologyScrape:
     writer = csv.writer(tapologyScrape)
     writer.writerow(head)
     writer.writerows(fightStats)
-
-
-
-
-
-        
-
-
-
