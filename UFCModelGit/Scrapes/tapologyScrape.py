@@ -147,7 +147,7 @@ fightLinksParts = []
 count =1
 for i in cleanParts:
     if(count%15==0):
-        time.sleep(60)
+        time.sleep(180)
     fightParts = []
     #create url
     url = f"https://www.tapology.com{i}"
@@ -180,7 +180,7 @@ count = 1
 fightStats = []
 for i in fightLinksParts:
     if(count%20==0):
-        time.sleep(60)
+        time.sleep(180)
     proxyheader = getProxyHeader()
     proxy = proxyheader[0]
     headers = proxyheader[1]
