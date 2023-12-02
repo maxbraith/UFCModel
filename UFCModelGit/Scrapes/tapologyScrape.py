@@ -178,8 +178,8 @@ print(f'Fights found: {len(fightLinksParts)}')
 count = 1
 fightStats = []
 for i in fightLinksParts:
-    if(count%16==0):
-        time.sleep(180)
+    if(count%15==0):
+        time.sleep(random.randint(180, 300))
     proxyheader = getProxyHeader()
     proxy = proxyheader[0]
     headers = proxyheader[1]
@@ -196,6 +196,7 @@ for i in fightLinksParts:
         boutInfo = soup.find('div', class_=re.compile('right'))
         lilabels = boutInfo.find_all('li')
     except:
+        time.sleep(900)
         proxyheader = getProxyHeader()
         proxy = proxyheader[0]
         headers = proxyheader[1]
