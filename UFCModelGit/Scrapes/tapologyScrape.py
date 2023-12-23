@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import pandas as pd
-import numpy as np
 import math
 import csv
 from csv import writer
@@ -26,7 +24,7 @@ print(f'Proxies: {len(proxylist)}')
 def getProxyUserAgent():
     for i in proxylist:
         #test to see if website is accessible
-        userAgents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188','insomnia/8.4.5']
+        userAgents = ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0','Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/116.0','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188','insomnia/8.4.5','Mozilla/5.0 (Linux; Android 13; Pixel 6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 13; Pixel 6a) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 13; Pixel 6 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 13; Pixel 7 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 12; moto g pure) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 12; moto g stylus 5G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36v','Mozilla/5.0 (Linux; Android 13; SM-G998U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (iPhone; CPU iPhone OS 12_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/13.2b11866 Mobile/16A366 Safari/605.1.15','Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1']
         userAgent = userAgents[random.randint(0,len(userAgents)-1)]
         try:
             payload = ''
@@ -66,6 +64,8 @@ def getProxyUserAgent():
             return proxyheader
         #if user agent is not new issue, wait for next IP
         except:
+            pass
+        try:
             print("Waiting for new IP...")
             ipurl = "https://ipecho.net/plain"
             ipHeader = {"User-Agent": "insomnia/8.4.5"}
@@ -80,6 +80,24 @@ def getProxyUserAgent():
                 soup = BeautifulSoup(ipr.content, 'html.parser')
                 newIP = soup.text.strip()
                 time.sleep(15)
+            userAgents.remove(userAgent)
+            userAgent = userAgents[random.randint(0,len(userAgents)-1)]
+            payload = ''
+            headers = {'User-Agent':f'{userAgent}',
+            "cookie": "_tapology_mma_session=TCLB17ieOPnBLmCBTuxpX8s3uBODZMN3jL3jBbFhwPoywfbzG7gyvp%252BAzbOk4gOZ%252FOCykOUwcpEoJBwoj2rJyiMxdHWSaiLFkBYjfuUDpZ2VY6ECFn6rpTPmUBY1Zr2anIqiklY6fz9yQlBkPAhcx%252BWSzVgsc%252B%252F8UCqkb6WnM6xr8GUikb8U2UkMVYZ3Nj1dIA0vbXpDhKykqgW%252BCnlyglp8rtdlQ37m0SaYWjLDthG7Tik3idUvGlSXFAU55zAnxz6UNncMNhTbo5ltINfso54j60i7hOq0utNOz9w%253D--ChZexYwNpevIJ%252BV8--HhKStLELFfNWYOTZIAKM6Q%253D%253D"}
+            url = "https://www.tapology.com/fightcenter/bouts/2974-ufc-64-clay-the-carpenter-guida-vs-justin-pretty-boy-james"
+        
+            #site request
+            #soup = BeautifulSoup(driver.page_source, 'lxml')
+            response = requests.request("GET", url, data=payload, headers=headers, proxies={'http': f"http://{i}"})
+            soup = BeautifulSoup(response.content, 'html.parser')
+            boutInfo = soup.find('div', class_=re.compile('right'))
+            labels = boutInfo.find_all('li')
+            proxyheader = [i,userAgent]
+            return proxyheader
+        except:
+            print("Maintenence required...")
+            input("Press enter to continue")
             userAgents.remove(userAgent)
             userAgent = userAgents[random.randint(0,len(userAgents)-1)]
             payload = ''
@@ -234,11 +252,17 @@ for i in cleanParts:
     print(url)
     
     #site request
-    #try except to avoid failure on actual scrape
-    try:
-        site = requests.get(url, headers=headers, proxies={'http': f"http://{proxy}, 'https:'https/{proxy}"})
-        soup = BeautifulSoup(site.content, 'html.parser')
-    except:
+    site = requests.get(url, headers=headers, proxies={'http': f"http://{proxy}, 'https:'https/{proxy}"})
+    soup = BeautifulSoup(site.content, 'html.parser')
+
+
+    #scrape parts
+    billings = soup.find_all('span', class_='billing')
+    for part in billings:
+        fightParts.append(part.find_all('a'))    
+
+    print(len(fightParts))
+    if(len(fightParts) == 0):
         proxyheader = getProxyUserAgent()
         proxy = proxyheader[0]
         userAgent = proxyheader[1]
@@ -261,15 +285,10 @@ for i in cleanParts:
         }
         site = requests.get(url, headers=headers, proxies={'http': f"http://{proxy}, 'https:'https/{proxy}"})
         soup = BeautifulSoup(site.content, 'html.parser')
-
-
-    #scrape parts
-    billings = soup.find_all('span', class_='billing')
-    for part in billings:
-        fightParts.append(part.find_all('a'))    
-
-    print(len(fightParts))
-    print(i)
+        billings = soup.find_all('span', class_='billing')
+        for part in billings:
+            fightParts.append(part.find_all('a'))    
+        print(len(fightParts))
     #clean parts
     for part in fightParts:
         href = part[0]['href']
@@ -316,14 +335,25 @@ for i in fightLinksParts:
         response = requests.request("GET", url, data=payload, headers=headers, proxies={'http': f"http://{proxy}, 'https:'https/{proxy}"})
         soup = BeautifulSoup(response.content, 'html.parser')
 
-
-    url = f"https://www.tapology.com{i}"
-
     
-    
-    #scrape event
-    boutInfo = soup.find('div', class_=re.compile('right'))
-    lilabels = boutInfo.find_all('li')
+    try:
+        #scrape event
+        boutInfo = soup.find('div', class_=re.compile('right'))
+        lilabels = boutInfo.find_all('li')
+    except:
+        proxyheader = getProxyUserAgent()
+        proxy = proxyheader[0]
+        userAgent = proxyheader[1]
+        payload = ""
+        headers = {
+            "cookie": "_tapology_mma_session=6FGp%252FJUSTWYMfoxo8TfW%252BIXzLpUq7U9PMAJo5rHJA0IW5nmUvBfyvSfM1xK04kt35b9X7qEKQCxCoWu2ufxYHMbwDH88yla0%252FpzMP71n6pbfW%252FroMtWAh2n5sk9oxYFnmpfxohRaQMysmv%252B9f5fj0Omemblq8KM9NEDFiR5UPFyFXXYiM0Ee%252FWLYZ5JqObzpWnulDsrgvVtdtWFthH9vY6xz9HAvSb4KOm1HA6TvXXxYOO2Vuk6MeJwKYdwj3yqz8dV%252FHRgPknI5PsGEx3z3mxBNOJaFkRBT6iB%252B5Zo%253D--pNnhVuV4ORLaBVOE--yUSbtIv6C91epo3hOY0i5w%253D%253D",
+            "User-Agent": f'{userAgent}'
+        }
+        response = requests.request("GET", url, data=payload, headers=headers, proxies={'http': f"http://{proxy}, 'https:'https/{proxy}"})
+        soup = BeautifulSoup(response.content, 'html.parser')
+        #scrape event
+        boutInfo = soup.find('div', class_=re.compile('right'))
+        lilabels = boutInfo.find_all('li')
         
     print(url)
     #initialize attributes

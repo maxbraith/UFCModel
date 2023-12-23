@@ -9,11 +9,10 @@ import re
 #scrape from freeproxy.world
 url = "https://www.freeproxy.world/"
 proxylist =[]
-
 #filter through all pages
 for i in range(1,75):
+    print(i)
     try:
-
         #filter to http proxy
         querystring = {"type":"http","anonymity":"","country":"","speed":"","port":"","page":f"{i}"}
 
@@ -100,6 +99,11 @@ for i in trlabels:
     except:
         pass
 print(len(proxylist))
+
+
+
+
+
 #test proxies
 workingProxies = []
 def extract(proxy):
