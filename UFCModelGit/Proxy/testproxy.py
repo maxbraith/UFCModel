@@ -69,17 +69,19 @@ url = 'https://free-proxy-list.net/'
 site = requests.get(url, headers=headers)
 soup = BeautifulSoup(site.content, 'html.parser')
 #scrape table
-table = soup.find('div', class_=re.compile('table-responsive'))
-trlabels = table.find_all('tr')
+try:
+    table = soup.find('div', class_=re.compile('table-responsive'))
+    trlabels = table.find_all('tr')
+except:
+    pass
 #scrape proxies and add to test list
-for i in trlabels:
-    tdlabels = i.find_all('td')
-    try:
-
-        if(tdlabels[6].text.strip()=='yes'):
-            proxylist.append(tdlabels[0].text.strip())
-    except:
-        pass
+try:
+    for i in trlabels:
+            tdlabels = i.find_all('td')
+            if(tdlabels[6].text.strip()=='yes'):
+                proxylist.append(tdlabels[0].text.strip())
+except:
+    pass
 print(len(proxylist))
 #scrape proxies from hidemy.io
 url = 'https://hidemy.io/en/proxy-list/'

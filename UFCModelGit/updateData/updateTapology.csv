@@ -1,0 +1,13 @@
+fight,winner,loser,event,date,venue,title_fight,billing,winner_wins,loser_wins,winner_losses,loser_losses,winner_draws,loser_draws,winner_age,loser_age,belt_status,winner_nationality,loser_nationality,winner_fan ,loser_fan
+Leon Edwards vs Colby Covington,Leon Edwards,Colby Covington,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,yes,Main Event,21,17,3,3,0,0,32,35,Held by Edwards,United Kingdom,United States,66%,34%
+Alexandre Pantoja vs Brandon Royval,Alexandre Pantoja,Brandon Royval,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,yes,Co-Main Event,26,15,5,6,0,0,33,31,Held by Pantoja,Brazil,United States,14%,86%
+Shavkat Rakhmonov vs Stephen Thompson,Shavkat Rakhmonov,Stephen Thompson,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,17,17,0,6,0,1,29,40,,Kazakhstan,United States,9%,91%
+Paddy Pimblett vs Tony Ferguson,Paddy Pimblett,Tony Ferguson,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,20,25,3,9,0,0,28,39,,England,United States,32%,68%
+Josh Emmett vs Bryce Mitchell,Josh Emmett,Bryce Mitchell,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,18,16,4,1,0,0,38,29,,United States,United States,33%,67%
+Alonzo Menifield vs Dustin Jacoby,Alonzo Menifield,Dustin Jacoby,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,19,3,7,1,1,36,35,,United States,United States,71%,29%
+Irene Aldana vs Karol Rosa,Irene Aldana,Karol Rosa,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,17,7,5,0,0,35,28,,Mexico,Brazil,12%,88%
+Cody Garbrandt vs Brian Kelleher,Cody Garbrandt,Brian Kelleher,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,13,24,5,14,0,0,32,37,,United States,United States,17%,83%
+Ariane Lipski vs Casey O'Neill,Ariane Lipski,Casey O'Neill,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,16,9,8,1,0,0,29,26,,Brazil,Scotland,78%,22%
+Tagir Ulanbekov vs Cody Durden,Tagir Ulanbekov,Cody Durden,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,16,2,4,0,1,32,32,,Russia,United States,69%,31%
+Andre Fili vs Lucas Almeida,Andre Fili,Lucas Almeida,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,22,14,10,2,0,0,33,32,,United States,Brazil,78%,22%
+Shamil Gaziev vs Martin Buday,Shamil Gaziev,Martin Buday,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,11,13,0,1,0,0,33,32,,Bahrain,Slovak Republic,66%,34%
