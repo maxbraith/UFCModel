@@ -658,7 +658,7 @@ for i in range(5):
 for index, row in df2.iterrows():
     redCorner = row['redCorner']
     blueCorner = row['blueCorner']
-    winner = row
+    winner = row['winner']
     if(isinstance(redCorner, str)):
         if("'" in redCorner):
             df2.loc[index, 'redCorner'] = redCorner.replace("'", '')
@@ -692,7 +692,8 @@ column_headers = [
     'redCorner_sig_str', 'blueCorner_sig_str', 'redCorner_sig_str_percentage',
     'blueCorner_sig_str_percentage', 'redCorner_total_str', 'blueCorner_total_str',
     'redCorner_takedowns', 'blueCorner_takedowns', 'redCorner_takedown_percentage',
-    'blueCorner_takedown_percentage', 'redCorner_subs_attempted', 'blueCorner_subs_attempted'
+    'blueCorner_takedown_percentage', 'redCorner_subs_attempted', 'blueCorner_subs_attempted',
+    'round', 'time'
 ]
 
 #create dataframe using headers
@@ -1246,7 +1247,9 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
                     redCorner_takedown_percentage = row2['red_takedown_percentage']
                     blueCorner_takedown_percentage = row2['blue_takedown_percentage']
                     redCorner_subs_attempted = row2['red_subs_attempted']
-                    blueCorner_subs_attempted = row2['blue_subs_attempted']      
+                    blueCorner_subs_attempted = row2['blue_subs_attempted']
+                    roundA = row2['round']      
+                    time = row2['time']
             else:
                 fight = row['fight'].split(' vs ')
                 fighter1 = str(fight[0]).replace(" ", "").lower()
@@ -1335,7 +1338,9 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
                             redCorner_takedown_percentage = row2['red_takedown_percentage']
                             blueCorner_takedown_percentage = row2['blue_takedown_percentage']
                             redCorner_subs_attempted = row2['red_subs_attempted']
-                            blueCorner_subs_attempted = row2['blue_subs_attempted'] 
+                            blueCorner_subs_attempted = row2['blue_subs_attempted']
+                            roundA = row2['round']      
+                            time = row2['time'] 
         else:
             fight = row['fight'].split(' vs ')
             fighter1 = str(fight[0]).replace(" ", "").lower()
@@ -1424,7 +1429,9 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
                         redCorner_takedown_percentage = row2['red_takedown_percentage']
                         blueCorner_takedown_percentage = row2['blue_takedown_percentage']
                         redCorner_subs_attempted = row2['red_subs_attempted']
-                        blueCorner_subs_attempted = row2['blue_subs_attempted'] 
+                        blueCorner_subs_attempted = row2['blue_subs_attempted']
+                        roundA = row2['round']      
+                        time = row2['time'] 
     column_vals = {
         'fight': fight,
         'redCorner': redCorner,
@@ -1462,7 +1469,9 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
         'redCorner_takedown_percentage': redCorner_takedown_percentage,
         'blueCorner_takedown_percentage': blueCorner_takedown_percentage,
         'redCorner_subs_attempted': redCorner_subs_attempted,
-        'blueCorner_subs_attempted': blueCorner_subs_attempted
+        'blueCorner_subs_attempted': blueCorner_subs_attempted,
+        'round': roundA,
+        'time': time
     }
     dfNew.loc[len(dfNew)] = column_vals
 

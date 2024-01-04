@@ -71,6 +71,8 @@ for i in statLinks:
     event = None
     referee = None
     method_of_victory = None
+    round = None
+    time = None
     red_Knockdowns = None
     blue_Knockdowns = None
     red_sig_str = None
@@ -144,6 +146,19 @@ for i in statLinks:
     except:
         pass
 
+    iz = soup.find_all('i', class_=re.compile('b-fight-details__text-item'))
+    for j in range(len(iz)):
+        details = iz[j].find('i', class_=re.compile('b-fight-details__label'))
+        try:
+            test = details.text.strip()
+            if "Round:" in test:
+                round = iz[j].text.strip().replace(' ', '').replace('R', '').replace('o', '').replace('u', '').replace('n', '').replace('d', '').replace(':', '').replace("\n", '')
+            if "Time:" in test:
+                unFormattedTime = iz[j].text.strip().replace(' ', '').replace('T', '').replace('i', '').replace('m', '').replace('e', '').replace(':', '').replace("\n", '')
+                time = unFormattedTime[0] + ":" + unFormattedTime[1:]
+        except:
+            pass
+
     #scrape red blue stats
     try:
         ps = soup.find_all('p', class_='b-fight-details__table-text')
@@ -181,7 +196,7 @@ for i in statLinks:
     except:
         pass
 
-    fightStats.append([redCorner, blueCorner, winner, event, referee, method_of_victory, red_Knockdowns, blue_Knockdowns, red_sig_str, blue_sig_str, red_sig_str_percentage, blue_sig_str_percentage, red_total_strikes, blue_total_strikes, red_takedowns, blue_takedowns, red_takedown_percentage, blue_takedown_percentage, red_subs_attempted, blue_subs_attempted])
+    fightStats.append([redCorner, blueCorner, winner, event, referee, method_of_victory, red_Knockdowns, blue_Knockdowns, red_sig_str, blue_sig_str, red_sig_str_percentage, blue_sig_str_percentage, red_total_strikes, blue_total_strikes, red_takedowns, blue_takedowns, red_takedown_percentage, blue_takedown_percentage, red_subs_attempted, blue_subs_attempted, round, time])
 
 
     print(f'Sraping {redCorner} vs {blueCorner}...{f"{count/len(statLinks):.0%}"}')
@@ -191,13 +206,12 @@ for i in statLinks:
 
 #create csv file
 
-head = ['redCorner', 'blueCorner', 'winner', 'event', 'referee', 'method_of_victory', 'red_Knockdowns', 'blue_Knockdowns', 'red_sig_str', 'blue_sig_str', 'red_sig_str_percentage', 'blue_sig_str_percentage', 'red_total_strikes', 'blue_total_strikes', 'red_takedowns', 'blue_takedowns', 'red_takedown_percentage', 'blue_takedown_percentage', 'red_subs_attempted', 'blue_subs_attempted']
+head = ['redCorner', 'blueCorner', 'winner', 'event', 'referee', 'method_of_victory', 'red_Knockdowns', 'blue_Knockdowns', 'red_sig_str', 'blue_sig_str', 'red_sig_str_percentage', 'blue_sig_str_percentage', 'red_total_strikes', 'blue_total_strikes', 'red_takedowns', 'blue_takedowns', 'red_takedown_percentage', 'blue_takedown_percentage', 'red_subs_attempted', 'blue_subs_attempted', 'round', 'time']
 
 with open('ufc_history_fight_statistics.csv', 'w', encoding='UTF8', newline='') as scrapedHistory:
     writer = csv.writer(scrapedHistory)
     writer.writerow(head)
     writer.writerows(fightStats)
-
 
 
     
