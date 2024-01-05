@@ -111,14 +111,29 @@ for part in linkParts:
         div = soup.find_all('div', class_=re.compile("overlap-athlete-content overlap-athlete-content--horizontal"))
         stripped = div[0].text.strip().split('\n')
         clean_stripped = [item for item in stripped if item != '']
+    except:
+        pass
+    try:
         if(clean_stripped[2].lower() == 'striking accuracy'):
             sig_str_accuracy = clean_stripped[1]
+    except:
+        pass
+    try:
         if(clean_stripped[3].lower() == "sig. strikes landed" and clean_stripped[5].lower() == "sig. strikes attempted"):
             sig_str_totals = f"{clean_stripped[4]} of {clean_stripped[6]}"
+    except:
+        pass
+    try:
         stripped = div[1].text.strip().split('\n')
         clean_stripped = [item for item in stripped if item != '']
+    except:
+        pass
+    try:
         if clean_stripped[2].lower() == 'takedown accuracy':
             takedown_accuracy = clean_stripped[1]
+    except:
+        pass
+    try:
         if clean_stripped[3].lower() == 'takedowns landed' and clean_stripped[5].lower() == "takedowns attempted":
             takedown_totals = f"{clean_stripped[4]} of {clean_stripped[6]}"
     except:
@@ -127,51 +142,82 @@ for part in linkParts:
 
 
     #scrape + clean sig_str_per_minute + takedown_avg_per_fifteen + sig_str_defense + knockdown_avg
-    try:
-        divs = soup.find_all('div', class_=re.compile('c-stat-compare__group c-stat-compare__group-1'))
-        for div in divs:
+
+    divs = soup.find_all('div', class_=re.compile('c-stat-compare__group c-stat-compare__group-1'))
+
+    for div in divs:
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "sig. str. landed"):
                 sig_str_per_minute = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "takedown avg"):
                 takedown_avg_per_fifteen = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "sig. str. defense"):
                 sig_str_defense = f"{div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split('\n')[0]}%"
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "knockdown avg"):
                 knockdown_avg = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
-    except:
-        pass
+        except:
+            pass
+
 
     # scrape + clean sig_str_absorbed_per_min + submission_avg_per_fifteen + takedown_defense + avg_fight_time
-    try:
-        divs = soup.find_all('div', re.compile('c-stat-compare__group c-stat-compare__group-2'))
-        for div in divs:
+    divs = soup.find_all('div', re.compile('c-stat-compare__group c-stat-compare__group-2'))
+    for div in divs:
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "sig. str. absorbed"):
                 sig_str_absorbed_per_min = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "submission avg"):
                 submission_avg_per_fifteen = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "takedown defense"):
                 takedown_defense = f"{div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split('\n')[0]}%"
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "average fight time"):
                 avg_fight_time = div.find('div', class_=re.compile("c-stat-compare__number")).text.strip()
+        except:
+            pass
             
-            
-    except:
-        pass
+
 
     #scrape + clean nation + age + height + reach
-    try:
-        divs = soup.find_all('div', class_=re.compile('c-bio__field'))
-        for div in divs:
+    divs = soup.find_all('div', class_=re.compile('c-bio__field'))
+
+    for div in divs:
+        try:
             if(div.find('div', class_=re.compile('c-bio__label')).text.strip().lower() == 'place of birth'):
                 nation = div.find('div', class_=re.compile('c-bio__text')).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-bio__label')).text.strip().lower() == 'age'):
                 age = div.find('div', class_=re.compile('field field--name-age field--type-integer field--label-hidden field__item')).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-bio__label')).text.strip().lower() == 'height'):
                 height = div.find('div', class_=re.compile('c-bio__text')).text.strip()
+        except:
+            pass
+        try:
             if(div.find('div', class_=re.compile('c-bio__label')).text.strip().lower() == 'reach'):
                 reach = div.find('div', class_=re.compile('c-bio__text')).text.strip()
-    except:
-        pass
+        except:
+            pass
 
 
     print(f'Scraping {name}...')
@@ -179,9 +225,10 @@ for part in linkParts:
     fighterStats.append([name, wins, losses, draws, height, reach, age, nation, sig_str_accuracy, sig_str_totals, takedown_accuracy, takedown_totals, sig_str_per_minute, takedown_avg_per_fifteen, sig_str_defense, knockdown_avg, sig_str_absorbed_per_min, submission_avg_per_fifteen, takedown_defense, avg_fight_time])
 
 
+
 #create csv file
 
-head = ['redCorner', 'blueCorner', 'winner', 'event', 'referee', 'method_of_victory', 'red_Knockdowns', 'blue_Knockdowns', 'red_sig_str', 'blue_sig_str', 'red_sig_str_percentage', 'blue_sig_str_percentage', 'red_total_strikes', 'blue_total_strikes', 'red_takedowns', 'blue_takedowns', 'red_takedown_percentage', 'blue_takedown_percentage', 'red_subs_attempted', 'blue_subs_attempted', 'round', 'time']
+head = ['name', 'wins', 'losses', 'draws', 'height', 'reach', 'age', 'nation', 'sig_str_accuracy', 'sig_str_totals', 'takedown_accuracy', 'takedown_totals', 'sig_str_per_minute', 'takedown_avg_per_fifteen', 'sig_str_defense', 'knockdown_avg', 'sig_str_absorbed_per_min', 'submission_avg_per_fifteen', 'takedown_defense', 'avg_fight_time']
 
 with open('alt_fighter_stats.csv', 'w', encoding='UTF8', newline='') as scrapedFighters:
     writer = csv.writer(scrapedFighters)
