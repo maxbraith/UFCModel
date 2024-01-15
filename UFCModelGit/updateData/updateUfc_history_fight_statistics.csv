@@ -1,13 +1,12 @@
-redCorner,blueCorner,winner,event,referee,method_of_victory,red_Knockdowns,blue_Knockdowns,red_sig_str,blue_sig_str,red_sig_str_percentage,blue_sig_str_percentage,red_total_strikes,blue_total_strikes,red_takedowns,blue_takedowns,red_takedown_percentage,blue_takedown_percentage,red_subs_attempted,blue_subs_attempted
-Leon Edwards,Colby Covington,Leon Edwards,UFC 296: Edwards vs. Covington,Herb Dean,Decision - Unanimous,0,0,57 of 108,44 of 126,52%,34%,65 of 116,109 of 194,2 of 3,2 of 10,66%,20%,2,0
-Alexandre Pantoja,Brandon Royval,Alexandre Pantoja,UFC 296: Edwards vs. Covington,Marc Goddard,Decision - Unanimous,0,0,95 of 156,111 of 204,60%,54%,126 of 195,281 of 390,8 of 14,0 of 1,57%,0%,1,0
-Shavkat Rakhmonov,Stephen Thompson,Shavkat Rakhmonov,UFC 296: Edwards vs. Covington,Jason Herzog,Submission,0,0,28 of 36,16 of 25,77%,64%,73 of 88,26 of 37,1 of 5,0 of 0,20%,---,2,0
-Tony Ferguson,Paddy Pimblett,Paddy Pimblett,UFC 296: Edwards vs. Covington,Mark Smith,Decision - Unanimous,0,1,62 of 105,106 of 165,59%,64%,90 of 134,151 of 217,0 of 0,1 of 4,---,25%,0,0
-Josh Emmett,Bryce Mitchell,Josh Emmett,UFC 296: Edwards vs. Covington,Herb Dean,KO/TKO,1,0,2 of 10,0 of 3,20%,0%,2 of 10,0 of 3,0 of 0,0 of 0,---,---,0,0
-Alonzo Menifield,Dustin Jacoby,Alonzo Menifield,UFC 296: Edwards vs. Covington,Chris Tognoni,Decision - Unanimous,1,0,68 of 117,93 of 150,58%,62%,95 of 145,113 of 171,1 of 2,0 of 0,50%,---,0,0
-Irene Aldana,Karol Rosa,Irene Aldana,UFC 296: Edwards vs. Covington,Jason Herzog,Decision - Unanimous,0,0,145 of 308,204 of 350,47%,58%,145 of 308,204 of 350,0 of 0,0 of 1,---,0%,0,0
-Cody Garbrandt,Brian Kelleher,Cody Garbrandt,UFC 296: Edwards vs. Covington,Marc Goddard,KO/TKO,1,0,20 of 41,17 of 25,48%,68%,21 of 42,21 of 29,0 of 0,0 of 1,---,0%,0,0
-Casey O'Neill,Ariane Lipski,Ariane Lipski,UFC 296: Edwards vs. Covington,Mark Smith,Submission,0,0,31 of 74,64 of 127,41%,50%,32 of 75,86 of 152,0 of 2,1 of 1,0%,100%,0,1
-Tagir Ulanbekov,Cody Durden,Tagir Ulanbekov,UFC 296: Edwards vs. Covington,Chris Tognoni,Submission,1,0,24 of 41,32 of 43,58%,74%,45 of 63,55 of 67,2 of 2,0 of 0,100%,---,5,0
-Andre Fili,Lucas Almeida,Andre Fili,UFC 296: Edwards vs. Covington,Jason Herzog,KO/TKO,1,0,20 of 36,10 of 25,55%,40%,25 of 42,10 of 25,0 of 0,0 of 0,---,---,0,0
-Martin Buday,Shamil Gaziev,Shamil Gaziev,UFC 296: Edwards vs. Covington,Mark Smith,KO/TKO,0,0,8 of 20,49 of 98,40%,50%,13 of 26,60 of 114,0 of 2,0 of 0,0%,---,0,0
+redCorner,blueCorner,winner,event,referee,method_of_victory,red_Knockdowns,blue_Knockdowns,red_sig_str,blue_sig_str,red_sig_str_percentage,blue_sig_str_percentage,red_total_strikes,blue_total_strikes,red_takedowns,blue_takedowns,red_takedown_percentage,blue_takedown_percentage,red_subs_attempted,blue_subs_attempted,round,time
+Magomed Ankalaev,Johnny Walker,Magomed Ankalaev,UFC Fight Night: Ankalaev vs. Walker 2,Marc Goddard,KO/TKO,1,0,39 of 58,24 of 71,67%,33%,39 of 58,26 of 73,0 of 0,0 of 0,---,---,0,0,2,2:42
+Jim Miller,Gabriel Benitez,Jim Miller,UFC Fight Night: Ankalaev vs. Walker 2,Dan Miragliotta,Submission,0,0,80 of 140,80 of 182,57%,43%,96 of 157,84 of 188,2 of 2,0 of 0,100%,---,1,0,3,3:25
+Ricky Simon,Mario Bautista,Mario Bautista,UFC Fight Night: Ankalaev vs. Walker 2,Mark Smith,Decision - Unanimous,0,0,45 of 108,112 of 270,41%,41%,52 of 115,118 of 276,2 of 13,0 of 3,15%,0%,0,0,3,5:00
+Phil Hawes,Brunno Ferreira,Brunno Ferreira,UFC Fight Night: Ankalaev vs. Walker 2,Chris Tognoni,KO/TKO,0,1,13 of 27,19 of 43,48%,44%,13 of 28,24 of 49,0 of 1,1 of 4,0%,25%,0,0,1,4:55
+Andrei Arlovski,Waldo Cortes-Acosta,Waldo Cortes-Acosta,UFC Fight Night: Ankalaev vs. Walker 2,Marc Goddard,Decision - Unanimous,0,0,58 of 127,49 of 136,45%,36%,58 of 127,50 of 137,0 of 0,0 of 0,---,---,0,0,3,5:00
+Matthew Semelsberger,Preston Parsons,Preston Parsons,UFC Fight Night: Ankalaev vs. Walker 2,Dan Miragliotta,Decision - Unanimous,0,0,28 of 69,47 of 87,40%,54%,33 of 77,116 of 165,1 of 2,7 of 11,50%,63%,2,2,3,5:00
+Marcus McGhee,Gaston Bolanos,Marcus McGhee,UFC Fight Night: Ankalaev vs. Walker 2,Mark Smith,KO/TKO,1,0,65 of 123,28 of 81,52%,34%,74 of 134,28 of 82,1 of 3,0 of 0,33%,---,0,0,2,3:29
+Farid Basharat,Taylor Lapilus,Farid Basharat,UFC Fight Night: Ankalaev vs. Walker 2,Chris Tognoni,Decision - Unanimous,0,0,42 of 100,40 of 93,42%,43%,55 of 116,41 of 94,5 of 16,0 of 0,31%,---,1,0,3,5:00
+Westin Wilson,Jean Silva,Jean Silva,UFC Fight Night: Ankalaev vs. Walker 2,Marc Goddard,KO/TKO,0,1,11 of 36,25 of 36,30%,69%,11 of 36,25 of 36,0 of 3,1 of 1,0%,100%,0,0,1,4:12
+Nikolas Motta,Tom Nolan,Nikolas Motta,UFC Fight Night: Ankalaev vs. Walker 2,Dan Miragliotta,KO/TKO,1,0,21 of 40,12 of 20,52%,60%,21 of 40,12 of 20,0 of 0,0 of 0,---,---,0,0,1,1:03
+Joshua Van,Felipe Bunes,Joshua Van,UFC Fight Night: Ankalaev vs. Walker 2,Mark Smith,KO/TKO,1,0,83 of 141,50 of 91,58%,54%,154 of 222,57 of 101,1 of 1,2 of 6,100%,33%,0,0,2,4:31

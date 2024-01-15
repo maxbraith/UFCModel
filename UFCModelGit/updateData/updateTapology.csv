@@ -1,13 +1,12 @@
 fight,winner,loser,event,date,venue,title_fight,billing,winner_wins,loser_wins,winner_losses,loser_losses,winner_draws,loser_draws,winner_age,loser_age,belt_status,winner_nationality,loser_nationality,winner_fan ,loser_fan
-Leon Edwards vs Colby Covington,Leon Edwards,Colby Covington,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,yes,Main Event,21,17,3,3,0,0,32,35,Held by Edwards,United Kingdom,United States,66%,34%
-Alexandre Pantoja vs Brandon Royval,Alexandre Pantoja,Brandon Royval,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,yes,Co-Main Event,26,15,5,6,0,0,33,31,Held by Pantoja,Brazil,United States,14%,86%
-Shavkat Rakhmonov vs Stephen Thompson,Shavkat Rakhmonov,Stephen Thompson,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,17,17,0,6,0,1,29,40,,Kazakhstan,United States,9%,91%
-Paddy Pimblett vs Tony Ferguson,Paddy Pimblett,Tony Ferguson,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,20,25,3,9,0,0,28,39,,England,United States,32%,68%
-Josh Emmett vs Bryce Mitchell,Josh Emmett,Bryce Mitchell,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Main Card,18,16,4,1,0,0,38,29,,United States,United States,33%,67%
-Alonzo Menifield vs Dustin Jacoby,Alonzo Menifield,Dustin Jacoby,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,19,3,7,1,1,36,35,,United States,United States,71%,29%
-Irene Aldana vs Karol Rosa,Irene Aldana,Karol Rosa,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,17,7,5,0,0,35,28,,Mexico,Brazil,12%,88%
-Cody Garbrandt vs Brian Kelleher,Cody Garbrandt,Brian Kelleher,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,13,24,5,14,0,0,32,37,,United States,United States,17%,83%
-Ariane Lipski vs Casey O'Neill,Ariane Lipski,Casey O'Neill,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,16,9,8,1,0,0,29,26,,Brazil,Scotland,78%,22%
-Tagir Ulanbekov vs Cody Durden,Tagir Ulanbekov,Cody Durden,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,14,16,2,4,0,1,32,32,,Russia,United States,69%,31%
-Andre Fili vs Lucas Almeida,Andre Fili,Lucas Almeida,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,22,14,10,2,0,0,33,32,,United States,Brazil,78%,22%
-Shamil Gaziev vs Martin Buday,Shamil Gaziev,Martin Buday,UFC 296: Edwards vs. Covington,12.16.2023,T-Mobile Arena,no,Preliminary Card,11,13,0,1,0,0,33,32,,Bahrain,Slovak Republic,66%,34%
+Magomed Ankalaev vs Johnny Walker,Magomed Ankalaev,Johnny Walker,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Event,18,21,1,7,1,0,31,31,,Russia,Brazil,25%,75%
+Jim Miller vs Gabriel Benítez,Jim Miller,Gabriel Benítez,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,36,23,17,10,0,0,40,35,,United States,Mexico,90%,10%
+Mario Bautista vs Ricky Simón,Mario Bautista,Ricky Simón,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,13,20,2,4,0,0,30,31,,United States,United States,27%,73%
+Brunno Ferreira vs Phil Hawes,Brunno Ferreira,Phil Hawes,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,10,12,1,5,0,0,31,35,,Brazil,United States,21%,79%
+Waldo Cortes-Acosta vs Andrei Arlovski,Waldo Cortes-Acosta,Andrei Arlovski,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,10,34,1,22,0,0,32,44,,Dominican Republic,Belarus,12%,88%
+Preston Parsons vs Matthew Semelsberger,Preston Parsons,Matthew Semelsberger,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,10,11,4,6,0,0,28,31,,United States,United States,22%,78%
+Marcus McGhee vs Gaston Bolaños,Marcus McGhee,Gaston Bolaños,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,8,7,1,3,0,0,33,31,,United States,Peru,91%,9%
+Farid Basharat vs Taylor Lapilus,Farid Basharat,Taylor Lapilus,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,11,19,0,3,0,0,26,31,,Afghanistan,France,15%,85%
+Jean Silva vs Westin Wilson,Jean Silva,Westin Wilson,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,11,16,2,8,0,0,27,34,,Brazil,United States,94%,6%
+Nikolas Motta vs Tom Nolan,Nikolas Motta,Tom Nolan,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,13,6,5,0,0,0,30,23,,Brazil,Australia,6%,94%
+Joshua Van vs Felipe Bunes,Joshua Van,Felipe Bunes,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,9,13,1,6,0,0,22,34,,Myanmar,Brazil,96%,4%
