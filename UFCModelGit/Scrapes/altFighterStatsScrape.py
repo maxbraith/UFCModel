@@ -158,7 +158,7 @@ for part in linkParts:
             pass
         try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "sig. str. defense"):
-                sig_str_defense = f"{div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split('\n')[0]}%"
+                sig_str_defense = str(div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split("\n")[0]) +"%"
         except:
             pass
         try:
@@ -183,7 +183,7 @@ for part in linkParts:
             pass
         try:
             if(div.find('div', class_=re.compile('c-stat-compare__label')).text.strip().lower() == "takedown defense"):
-                takedown_defense = f"{div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split('\n')[0]}%"
+                takedown_defense = str(div.find('div', class_=re.compile("c-stat-compare__number")).text.strip().split('\n')[0]) +"%"
         except:
             pass
         try:
