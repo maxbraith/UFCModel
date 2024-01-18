@@ -87,6 +87,12 @@ for i in statLinks:
     blue_takedown_percentage = None
     red_subs_attempted = None
     blue_subs_attempted = None
+    redCorner_height = None
+    blueCorner_height = None
+    redCorner_reach = None
+    blueCorner_reach = None
+    redCorner_stance = None
+    blueCorner_stance = None
 
     #site request
     try:
@@ -196,7 +202,44 @@ for i in statLinks:
     except:
         pass
 
-    fightStats.append([redCorner, blueCorner, winner, event, referee, method_of_victory, red_Knockdowns, blue_Knockdowns, red_sig_str, blue_sig_str, red_sig_str_percentage, blue_sig_str_percentage, red_total_strikes, blue_total_strikes, red_takedowns, blue_takedowns, red_takedown_percentage, blue_takedown_percentage, red_subs_attempted, blue_subs_attempted, round, time])
+
+    try:
+        #scrape redCorner/blueCorner links 
+        indstatLinks = soup.find_all('a', class_=re.compile('b-link b-link_style_black'))
+        redCornerLink = indstatLinks[0]
+        blueCornerLink = indstatLinks[1]
+        
+        #clean for href
+        redCornerLink = redCornerLink['href']
+        blueCornerLink = blueCornerLink['href']
+
+        response = requests.get(redCornerLink, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        #clean soup for rest of stats
+        i_tags = soup.find_all('i')
+        for itags in i_tags:
+            itags.decompose()
+        tempRest = soup.find_all('li', class_=re.compile('b-list__box-list-item b-list__box-list-item_type_block'))
+        redCorner_height = tempRest[0].text.strip()
+        redCorner_reach = tempRest[2].text.strip()
+        redCorner_stance = tempRest[3].text.strip()
+
+        #height, reach, stance blue
+        response = requests.get(blueCornerLink, headers=headers)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        #clean soup for rest of stats
+        i_tags = soup.find_all('i')
+        for itags in i_tags:
+            itags.decompose()
+        tempRest = soup.find_all('li', class_=re.compile('b-list__box-list-item b-list__box-list-item_type_block'))
+        blueCorner_height = tempRest[0].text.strip()
+        blueCorner_reach = tempRest[2].text.strip()
+        blueCorner_stance = tempRest[3].text.strip()
+    except:
+        pass
+
+
+    fightStats.append([redCorner, blueCorner, winner, event, referee, method_of_victory, red_Knockdowns, blue_Knockdowns, red_sig_str, blue_sig_str, red_sig_str_percentage, blue_sig_str_percentage, red_total_strikes, blue_total_strikes, red_takedowns, blue_takedowns, red_takedown_percentage, blue_takedown_percentage, red_subs_attempted, blue_subs_attempted, round, time, redCorner_height, blueCorner_height, redCorner_reach, blueCorner_reach, redCorner_stance, blueCorner_stance])
 
 
     print(f'Sraping {redCorner} vs {blueCorner}...{f"{count/len(statLinks):.0%}"}')
@@ -206,7 +249,7 @@ for i in statLinks:
 
 #create csv file
 
-head = ['redCorner', 'blueCorner', 'winner', 'event', 'referee', 'method_of_victory', 'red_Knockdowns', 'blue_Knockdowns', 'red_sig_str', 'blue_sig_str', 'red_sig_str_percentage', 'blue_sig_str_percentage', 'red_total_strikes', 'blue_total_strikes', 'red_takedowns', 'blue_takedowns', 'red_takedown_percentage', 'blue_takedown_percentage', 'red_subs_attempted', 'blue_subs_attempted', 'round', 'time']
+head = ['redCorner', 'blueCorner', 'winner', 'event', 'referee', 'method_of_victory', 'red_Knockdowns', 'blue_Knockdowns', 'red_sig_str', 'blue_sig_str', 'red_sig_str_percentage', 'blue_sig_str_percentage', 'red_total_strikes', 'blue_total_strikes', 'red_takedowns', 'blue_takedowns', 'red_takedown_percentage', 'blue_takedown_percentage', 'red_subs_attempted', 'blue_subs_attempted', 'round', 'time', 'red_height', 'blue_height', 'red_reach', 'blue_reach', 'red_stance', 'blue_stance']
 
 with open('ufc_history_fight_statistics.csv', 'w', encoding='UTF8', newline='') as scrapedHistory:
     writer = csv.writer(scrapedHistory)
