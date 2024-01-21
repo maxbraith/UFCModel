@@ -55,14 +55,17 @@ for div in divs:
         pass
 
 #get content of download link
-site = requests.get(download,headers=headers)
-soup = BeautifulSoup(site.content, 'html.parser')
-#add proxies to testlist
-tempproxylist = soup.text.strip().split('\r')
-for proxy in tempproxylist:
-    proxylist.append(proxy)
+try:
+    site = requests.get(download,headers=headers)
+    soup = BeautifulSoup(site.content, 'html.parser')
+    #add proxies to testlist
+    tempproxylist = soup.text.strip().split('\r')
+    for proxy in tempproxylist:
+        proxylist.append(proxy)
 
-print(len(proxylist))
+    print(len(proxylist))
+except:
+    pass    
 #scrape proxies from free-proxy-list.net
 url = 'https://free-proxy-list.net/'
 #site + soup
