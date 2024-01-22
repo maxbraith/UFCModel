@@ -121,7 +121,7 @@ df.replace('--', np.nan, inplace=True)
 #fill Nans
 for index, row in df.loc[:6161].iterrows():
     reach = None
-    if row['blueCorner_reach'] is np.nan or row['blueCorner_reach'] is np.nan:
+    if row['blueCorner_reach'] is np.nan:
         fighter = row['blueCorner']
         fighterList = fighter.split(' ')
         try:
@@ -291,7 +291,7 @@ for index, row in df.loc[:6161].iterrows():
 #fill nans
 for index, row in df.loc[:6161].iterrows():
     reach = None
-    if row['redCorner_reach'] is np.nan or row['redCorner_reach'] is np.nan:
+    if row['redCorner_reach'] is np.nan:
         fighter = row['redCorner']
         fighterList = fighter.split(' ')
         try:

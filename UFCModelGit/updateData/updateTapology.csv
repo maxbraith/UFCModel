@@ -1,12 +1,13 @@
 fight,winner,loser,event,date,venue,title_fight,billing,winner_wins,loser_wins,winner_losses,loser_losses,winner_draws,loser_draws,winner_age,loser_age,belt_status,winner_nationality,loser_nationality,winner_fan ,loser_fan
-Magomed Ankalaev vs Johnny Walker,Magomed Ankalaev,Johnny Walker,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Event,18,21,1,7,1,0,31,31,,Russia,Brazil,25%,75%
-Jim Miller vs Gabriel Benítez,Jim Miller,Gabriel Benítez,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,36,23,17,10,0,0,40,35,,United States,Mexico,90%,10%
-Mario Bautista vs Ricky Simón,Mario Bautista,Ricky Simón,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,13,20,2,4,0,0,30,31,,United States,United States,27%,73%
-Brunno Ferreira vs Phil Hawes,Brunno Ferreira,Phil Hawes,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,10,12,1,5,0,0,31,35,,Brazil,United States,21%,79%
-Waldo Cortes-Acosta vs Andrei Arlovski,Waldo Cortes-Acosta,Andrei Arlovski,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Main Card,10,34,1,22,0,0,32,44,,Dominican Republic,Belarus,12%,88%
-Preston Parsons vs Matthew Semelsberger,Preston Parsons,Matthew Semelsberger,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,10,11,4,6,0,0,28,31,,United States,United States,22%,78%
-Marcus McGhee vs Gaston Bolaños,Marcus McGhee,Gaston Bolaños,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,8,7,1,3,0,0,33,31,,United States,Peru,91%,9%
-Farid Basharat vs Taylor Lapilus,Farid Basharat,Taylor Lapilus,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,11,19,0,3,0,0,26,31,,Afghanistan,France,15%,85%
-Jean Silva vs Westin Wilson,Jean Silva,Westin Wilson,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,11,16,2,8,0,0,27,34,,Brazil,United States,94%,6%
-Nikolas Motta vs Tom Nolan,Nikolas Motta,Tom Nolan,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,13,6,5,0,0,0,30,23,,Brazil,Australia,6%,94%
-Joshua Van vs Felipe Bunes,Joshua Van,Felipe Bunes,UFC Fight Night: Ankalaev vs. Walker,01.13.2024,UFC Apex,no,Preliminary Card,9,13,1,6,0,0,22,34,,Myanmar,Brazil,96%,4%
+Dricus Du Plessis vs Sean Strickland,Dricus Du Plessis,Sean Strickland,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,yes,Main Event,20,28,2,5,0,0,30,32,Held by Strickland,South Africa,United States,53%,47%
+Raquel Pennington vs Mayra Bueno Silva,Raquel Pennington,Mayra Bueno Silva,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,yes,Co-Main Event,15,10,8,2,0,1,35,32,Held by Pennington,United States,Brazil,22%,78%
+Neil Magny vs Mike Malott,Neil Magny,Mike Malott,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,28,10,11,1,0,1,36,32,,United States,Canada,86%,14%
+Chris Curtis vs Marc-André Barriault,Chris Curtis,Marc-André Barriault,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,30,16,10,6,0,0,36,33,,United States,Canada,80%,20%
+Movsar Evloev vs Arnold Allen,Movsar Evloev,Arnold Allen,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,17,19,0,2,0,0,29,29,,Russia,England,43%,57%
+Garrett Armfield vs Brad Katona,Garrett Armfield,Brad Katona,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,13,3,2,0,0,27,32,,United States,Canada,91%,9%
+Sean Woodson vs Charles Jourdain,Sean Woodson,Charles Jourdain,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,10,15,1,6,1,1,31,28,,United States,Canada,19%,81%
+Ramon Taveras vs Serhiy Sidey,Ramon Taveras,Serhiy Sidey,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,10,2,1,0,0,30,27,,United States,Canada,83%,17%
+Gillian Robertson vs Polyana Viana,Gillian Robertson,Polyana Viana,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,12,13,8,6,0,0,28,31,,Canada,Brazil,80%,20%
+Sam Patterson vs Yohan Lainesse,Sam Patterson,Yohan Lainesse,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,10,9,2,2,1,0,27,31,,United Kingdom,Canada,37%,63%
+Jasmine Jasudavicius vs Priscila Cachoeira,Jasmine Jasudavicius,Priscila Cachoeira,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,12,3,5,0,0,34,35,,Canada,Brazil,10%,90%
+Jimmy Flick vs Malcolm Gordon,Jimmy Flick,Malcolm Gordon,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,16,14,7,7,0,0,33,33,,United States,Canada,68%,32%
