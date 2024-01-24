@@ -10,7 +10,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 
-df = pd.read_csv('traindata.csv')
+df = pd.read_csv('traindata2.csv')
 df.head()
 
 #drop nan
@@ -39,6 +39,15 @@ df = pd.concat([df, df_encoded], axis=1)
 #one hot encode venue
 df_encoded = pd.get_dummies(df, columns=['venue'], prefix='venue').astype(int)
 df = df.drop('venue', axis=1, inplace=True)
+df = pd.concat([df, df_encoded], axis=1)
+
+#one hot encode stances
+df_encoded = pd.get_dummies(df, columns=['redCorner_stance'], prefix='redCorner_stance').astype(int)
+df = df.drop('redCorner_stance', axis=1, inplace=True)
+df = pd.concat([df, df_encoded], axis=1)
+
+df_encoded = pd.get_dummies(df, columns=['blueCorner_stance'], prefix='blueCorner_stance').astype(int)
+df = df.drop('blueCorner_stance', axis=1, inplace=True)
 df = pd.concat([df, df_encoded], axis=1)
 
 #remove draws
@@ -81,4 +90,4 @@ y_hat = [0 if val<0.5 else 1 for val in y_hat]
 print(f'Accuracy: {accuracy_score(y_test,y_hat)}')
 
 #Highest accuracy: 0.8864013266998342 - 01.17.2023
-#Latest accuracy: 0.8814262023217247 - 01.17.2023
+#Latest accuracy: 0.8787375415282392 - 01.24.2023

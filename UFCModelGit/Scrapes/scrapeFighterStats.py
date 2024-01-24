@@ -48,6 +48,7 @@ def scrapeFighterStats():
 
             #initialize stats
             name = None
+            nickname = None
             wins = None
             losses = None
             draws = None
@@ -64,6 +65,14 @@ def scrapeFighterStats():
             takedown_accuracy = None
             takedown_defense = None
             sub_average = None
+
+
+            #scrape + clean nickname
+            try:
+                nick = soup.find('p', class_=re.compile('b-content__Nickname'))
+                nickname = nick.text.strip()
+            except:
+                pass
 
             #scrape name
             tempName = soup.find_all('span', class_=re.compile("b-content__title-highlight"))
@@ -110,7 +119,7 @@ def scrapeFighterStats():
 
 
             #adding stats to fighters_statistics to prepare for csv
-            fighters_statistics.append([name, wins, losses, draws, height, weight, reach, stance, dOB, sig_strikes_landed_per_min, sig_striking_accuracy, sig_strike_absorbed_per_min, sig_strike_defense, takedown_average, takedown_accuracy, takedown_defense, sub_average])
+            fighters_statistics.append([name, nickname, wins, losses, draws, height, weight, reach, stance, dOB, sig_strikes_landed_per_min, sig_striking_accuracy, sig_strike_absorbed_per_min, sig_strike_defense, takedown_average, takedown_accuracy, takedown_defense, sub_average])
         except:
             pass
         
@@ -119,9 +128,9 @@ def scrapeFighterStats():
         
 
         #create csv file
-        head = ['name', 'wins', 'losses', 'draws', 'height', 'weight', 'reach', 'stance', 'dOB', 'sig_strikes_landed_per_min', 'sig_striking_accuracy_%', 'sig_strike_absorbed_per_min', 'sig_strike_defense(%_of_sig_strikes_not_landed_by_opponent)', 'takedown_average(average_takedown_landed_per_fifteen_min)', 'takedown_accuracy_%', 'takedown_defense(%_of_opponent_takedown_not_landed)', 'sub_average(average_subs_attempted_per_15_mins)']
+        head = ['name', 'nickname' 'wins', 'losses', 'draws', 'height', 'weight', 'reach', 'stance', 'dOB', 'sig_strikes_landed_per_min', 'sig_striking_accuracy_%', 'sig_strike_absorbed_per_min', 'sig_strike_defense(%_of_sig_strikes_not_landed_by_opponent)', 'takedown_average(average_takedown_landed_per_fifteen_min)', 'takedown_accuracy_%', 'takedown_defense(%_of_opponent_takedown_not_landed)', 'sub_average(average_subs_attempted_per_15_mins)']
 
-        with open('ufc_fighters_statistics.csv', 'w', encoding='UTF8', newline='') as scrapedStats:
+        with open('ufc_fighters_statistics2024.csv', 'w', encoding='UTF8', newline='') as scrapedStats:
             writer = csv.writer(scrapedStats)
             writer.writerow(head)
             writer.writerows(fighters_statistics)
