@@ -238,7 +238,7 @@ for part in linkParts:
 
 #create csv file
 
-head = ['name', 'nickname' 'wins', 'losses', 'draws', 'height', 'reach', 'age', 'nation', 'sig_str_accuracy', 'sig_str_totals', 'takedown_accuracy', 'takedown_totals', 'sig_str_per_minute', 'takedown_avg_per_fifteen', 'sig_str_defense', 'knockdown_avg', 'sig_str_absorbed_per_min', 'submission_avg_per_fifteen', 'takedown_defense', 'avg_fight_time']
+head = ['name', 'nickname', 'wins', 'losses', 'draws', 'height', 'reach', 'age', 'nation', 'sig_str_accuracy', 'sig_str_totals', 'takedown_accuracy', 'takedown_totals', 'sig_str_per_minute', 'takedown_avg_per_fifteen', 'sig_str_defense', 'knockdown_avg', 'sig_str_absorbed_per_min', 'submission_avg_per_fifteen', 'takedown_defense', 'avg_fight_time']
 
 with open('alt_fighter_stats.csv', 'w', encoding='UTF8', newline='') as scrapedFighters:
     writer = csv.writer(scrapedFighters)

@@ -2,7 +2,6 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.metrics import accuracy_score
 import tensorflow as tf
 import keras
@@ -90,4 +89,4 @@ y_hat = [0 if val<0.5 else 1 for val in y_hat]
 print(f'Accuracy: {accuracy_score(y_test,y_hat)}')
 
 #Highest accuracy: 0.8864013266998342 - 01.17.2023
-#Latest accuracy: 0.8787375415282392 - 01.24.2023
+#Latest accuracy: 0.882890365448505 - 01.24.2023
