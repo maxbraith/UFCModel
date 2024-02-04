@@ -10,7 +10,6 @@ from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 
 df = pd.read_csv('traindata2.csv')
-df.head()
 
 #drop nan
 df = df.dropna(inplace=False)
@@ -88,5 +87,5 @@ y_hat = model.predict(X_test)
 y_hat = [0 if val<0.5 else 1 for val in y_hat]
 print(f'Accuracy: {accuracy_score(y_test,y_hat)}')
 
-#Highest accuracy: 0.8864013266998342 - 01.17.2023
-#Latest accuracy: 0.882890365448505 - 01.24.2023
+#Highest accuracy: 0.8864013266998342 - 01.17.2024
+#Latest accuracy: 0.8747927031509121 - 02.04.2024

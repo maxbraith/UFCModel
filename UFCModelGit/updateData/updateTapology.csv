@@ -1,13 +1,14 @@
 fight,winner,loser,event,date,venue,title_fight,billing,winner_wins,loser_wins,winner_losses,loser_losses,winner_draws,loser_draws,winner_age,loser_age,belt_status,winner_nationality,loser_nationality,winner_fan ,loser_fan
-Dricus Du Plessis vs Sean Strickland,Dricus Du Plessis,Sean Strickland,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,yes,Main Event,20,28,2,5,0,0,30,32,Held by Strickland,South Africa,United States,53%,47%
-Raquel Pennington vs Mayra Bueno Silva,Raquel Pennington,Mayra Bueno Silva,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,yes,Co-Main Event,15,10,8,2,0,1,35,32,Held by Pennington,United States,Brazil,22%,78%
-Neil Magny vs Mike Malott,Neil Magny,Mike Malott,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,28,10,11,1,0,1,36,32,,United States,Canada,86%,14%
-Chris Curtis vs Marc-André Barriault,Chris Curtis,Marc-André Barriault,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,30,16,10,6,0,0,36,33,,United States,Canada,80%,20%
-Movsar Evloev vs Arnold Allen,Movsar Evloev,Arnold Allen,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Main Card,17,19,0,2,0,0,29,29,,Russia,England,43%,57%
-Garrett Armfield vs Brad Katona,Garrett Armfield,Brad Katona,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,13,3,2,0,0,27,32,,United States,Canada,91%,9%
-Sean Woodson vs Charles Jourdain,Sean Woodson,Charles Jourdain,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,10,15,1,6,1,1,31,28,,United States,Canada,19%,81%
-Ramon Taveras vs Serhiy Sidey,Ramon Taveras,Serhiy Sidey,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,10,2,1,0,0,30,27,,United States,Canada,83%,17%
-Gillian Robertson vs Polyana Viana,Gillian Robertson,Polyana Viana,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,12,13,8,6,0,0,28,31,,Canada,Brazil,80%,20%
-Sam Patterson vs Yohan Lainesse,Sam Patterson,Yohan Lainesse,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,10,9,2,2,1,0,27,31,,United Kingdom,Canada,37%,63%
-Jasmine Jasudavicius vs Priscila Cachoeira,Jasmine Jasudavicius,Priscila Cachoeira,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,9,12,3,5,0,0,34,35,,Canada,Brazil,10%,90%
-Jimmy Flick vs Malcolm Gordon,Jimmy Flick,Malcolm Gordon,UFC 297: Strickland vs. Du Plessis,01.20.2024,Scotiabank Arena,no,Preliminary Card,16,14,7,7,0,0,33,33,,United States,Canada,68%,32%
+Nassourdine Imavov vs Roman Dolidze,Nassourdine Imavov,Roman Dolidze,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Main Event,12,12,4,2,0,0,27,35,,France,Georgia,56%,44%
+Renato Moicano vs Drew Dober,Renato Moicano,Drew Dober,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Co-Main Event,17,27,5,12,1,0,34,35,,Brazil,,50%,50%
+Randy Brown vs Muslim Salikhov,Randy Brown,Muslim Salikhov,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Main Card,17,19,5,4,0,0,33,39,,Jamaica,Russia,83%,17%
+Natália Silva vs Viviane Araujo,Natália Silva,Viviane Araujo,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Main Card,16,12,5,5,1,0,27,37,,Brazil,Brazil,8%,92%
+Aliaskhab Khizriev vs Makhmud Muradov,,,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Main Card,14,26,0,8,0,0,33,33,,Russia,Uzbekistan,82%,18%
+Charles Radtke vs Gilbert Urbina,Charles Radtke,Gilbert Urbina,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Main Card,8,7,3,2,0,0,33,27,,United States,United States,23%,77%
+Molly McCann vs Diana Belbiţă,Molly McCann,Diana Belbiţă,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,13,15,6,8,0,0,33,27,,England,Romania,22%,78%
+Charles Johnson vs Azat Maksum,Charles Johnson,Azat Maksum,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,13,17,6,0,0,0,33,29,,United States,Kazakhstan,8%,92%
+Themba Gorimbo vs Pete Rodriguez,Themba Gorimbo,Pete Rodriguez,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,11,5,4,1,0,0,33,27,,Zimbabwe,United States,30%,70%
+Jeong Yeong Lee vs Blake Bilder,Jeong Yeong Lee,Blake Bilder,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,10,8,1,1,0,1,28,33,,South Korea,United States,75%,25%
+Luana Carolina vs Julija Stoliarenko,Luana Carolina,Julija Stoliarenko,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,9,11,4,7,0,1,30,30,,Brazil,Lithuania,22%,78%
+MarQuel Mederos vs Landon Quiñones,MarQuel Mederos,Landon Quiñones,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,8,7,1,2,0,1,27,28,,United States,United States,28%,72%
+Jamal Pogues vs Thomas Petersen,Jamal Pogues,Thomas Petersen,UFC Fight Night: Dolidze vs. Imavov,02.03.2024,UFC Apex,no,Preliminary Card,10,8,4,1,0,0,28,28,,United States,United States,78%,22%
