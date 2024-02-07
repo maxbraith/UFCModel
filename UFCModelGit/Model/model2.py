@@ -11,10 +11,8 @@ from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 
 df = pd.read_csv('traindata2.csv')
-df.head()
 
 dfMock = pd.read_csv('mockTestData.csv')
-dfMock.head()
 
 df = df.dropna(inplace=False)
 
