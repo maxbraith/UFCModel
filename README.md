@@ -8,6 +8,7 @@ At its current stage the model performs at around 86-88% accuracy, using a datas
 
 The individual career fighter statistics dataset was used to construct a dataset representative of what will be inputted. This includes input data from fights since 2021. Using this data to test the model, the model achieves an accuracy of 65-66%.
 
-Additional features planned include an easily interpretable front end consisting fo three pages, one where the next card of fights is displayed as well as the model's prediction of who will win, another where users can input custom fights to see who the model predicts to win, and one more page that tracks the model's actual performance. This front end will be created using React.
+Other features included are the capability to update the database, as well as track the model's performance.
 
-One final feature planned is to update the planned front end and the back end, whilst also having the capability to update a custom amount of UFC cards in case the database is not updated after a UFC card.
+Additional features planned include an easily interpretable front end consisting of three pages, one where the next card of fights is displayed as well as the model's prediction of who will win, another where users can input custom fights to see who the model predicts to win, and one more page that tracks the model's actual performance. This front end will be created using React.
+
