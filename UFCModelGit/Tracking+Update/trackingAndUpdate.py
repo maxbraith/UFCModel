@@ -3747,7 +3747,7 @@ dfPrevPreds = pd.read_csv(f'predictions{mostRecentDatabase}.csv')
 dfPrevPreds.head()
 
 
-dfCheck = pd.read_csv(f'databaseUpdated{mostRecentDatabase}.csv')
+dfCheck = pd.read_csv(f'databaseUpdated{dateToday}.csv')
 dfCheck.head()
 
 
